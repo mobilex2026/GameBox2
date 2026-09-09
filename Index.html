@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameBox | مرکز دانلود بازی</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        🎮 <span>GameBox</span>
+    </div>
+
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#games">بازی‌ها</a>
+        <a href="#categories">دسته‌بندی</a>
+        <a href="#popular">محبوب‌ترین</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button id="themeBtn">🌙</button>
+
+        <button id="favoriteBtn">
+            ❤️
+            <span id="favoriteCount">0</span>
+        </button>
+
+        <button id="menuBtn" class="menu-btn">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<div id="mobileMenu" class="mobile-menu">
+
+    <a href="#home">خانه</a>
+    <a href="#games">بازی‌ها</a>
+    <a href="#categories">دسته‌بندی</a>
+    <a href="#popular">محبوب‌ترین</a>
+
+</div>
+
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🔥 هزاران بازی جذاب
+        </div>
+
+        <h1>
+            بازی مورد علاقه‌ات
+            <br>
+            را پیدا کن!
+        </h1>
+
+        <p>
+            جدیدترین و محبوب‌ترین بازی‌ها را
+            در GameBox پیدا و دانلود کن.
+        </p>
+
+        <div class="search">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="جستجوی بازی..."
+            >
+
+            <button id="searchBtn">
+                🔍
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-art">
+
+        <div class="controller">
+            🎮
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="categories" class="section">
+
+    <div class="title">
+
+        <div>
+            <span>دسته‌بندی</span>
+            <h2>بازی مورد علاقه‌ات را انتخاب کن</h2>
+        </div>
+
+    </div>
+
+
+    <div class="categories">
+
+        <button class="category active" data-category="all">
+            🎮 همه
+        </button>
+
+        <button class="category" data-category="action">
+            ⚔️ اکشن
+        </button>
+
+        <button class="category" data-category="racing">
+            🏎️ مسابقه‌ای
+        </button>
+
+        <button class="category" data-category="sports">
+            ⚽ ورزشی
+        </button>
+
+        <button class="category" data-category="adventure">
+            🗺️ ماجراجویی
+        </button>
+
+        <button class="category" data-category="puzzle">
+            🧩 فکری
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="games" class="section">
+
+    <div class="title">
+
+        <div>
+            <span>GameBox</span>
+            <h2>جدیدترین بازی‌ها</h2>
+        </div>
+
+        <strong id="gameCount"></strong>
+
+    </div>
+
+
+    <div id="gamesGrid" class="games-grid"></div>
+
+
+    <div id="empty" class="empty">
+
+        <div>😕</div>
+
+        <h2>بازی پیدا نشد</h2>
+
+        <p>
+            اسم بازی دیگری را امتحان کن.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="popular" class="section">
+
+    <div class="title">
+
+        <div>
+            <span>🔥 محبوب‌ترین</span>
+            <h2>بازی‌های پرطرفدار</h2>
+        </div>
+
+    </div>
+
+
+    <div class="popular-grid">
+
+        <div class="popular-card">
+
+            <div class="popular-img">
+                🏎️
+            </div>
+
+            <div>
+                <h3>Speed Racing</h3>
+                <p>مسابقه‌ای</p>
+                <b>⭐ 4.9</b>
+            </div>
+
+        </div>
+
+
+        <div class="popular-card">
+
+            <div class="popular-img">
+                ⚔️
+            </div>
+
+            <div>
+                <h3>Shadow War</h3>
+                <p>اکشن</p>
+                <b>⭐ 4.8</b>
+            </div>
+
+        </div>
+
+
+        <div class="popular-card">
+
+            <div class="popular-img">
+                ⚽
+            </div>
+
+            <div>
+                <h3>Super Football</h3>
+                <p>ورزشی</p>
+                <b>⭐ 4.7</b>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- GAME MODAL -->
+
+<div id="gameModal" class="modal">
+
+    <div class="game-modal">
+
+        <button id="closeModal" class="close">
+            ×
+        </button>
+
+
+        <div class="modal-cover">
+
+            <img id="modalImage" src="" alt="">
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <h2 id="modalTitle">
+                Game
+            </h2>
+
+
+            <div class="game-details">
+
+                <span id="modalCategory">
+                    🎮 اکشن
+                </span>
+
+                <span id="modalRating">
+                    ⭐ 4.8
+                </span>
+
+                <span id="modalSize">
+                    📦 500MB
+                </span>
+
+                <span id="modalVersion">
+                    🔢 v1.0
+                </span>
+
+            </div>
+
+
+            <p id="modalDescription">
+                توضیحات بازی
+            </p>
+
+
+            <div class="modal-buttons">
+
+                <a
+                    id="downloadBtn"
+                    class="download"
+                    href="#"
+                    download>
+                    ⬇️ دانلود بازی
+                </a>
+
+
+                <button
+                    id="favoriteModal"
+                    class="favorite">
+                    ❤️ علاقه‌مندی
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-logo">
+        🎮 GameBox
+    </div>
+
+    <p>
+        بهترین بازی‌ها در یک جا
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#">درباره ما</a>
+        <a href="#">تماس با ما</a>
+        <a href="#">قوانین</a>
+
+    </div>
+
+    <small>
+        © 2026 GameBox
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
